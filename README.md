@@ -1,116 +1,107 @@
-# Data Warehouse and Analytics Project
+# 🏛️ SQL Data Warehouse Project
 
-Welcome to the **Data Warehouse and Analytics Project** repository! 🚀  
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
+<div align="center">
+  
+  ![SQL Server](https://img.shields.io/badge/Database-SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
+  ![Architecture](https://img.shields.io/badge/Architecture-Medallion%20(Bronze)-blue?style=for-the-badge&logo=databricks&logoColor=white)
+  ![Language](https://img.shields.io/badge/Language-T--SQL-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
+  ![License](https://img.shields.io/badge/License-MIT-4CAF50?style=for-the-badge)
+
+  <p align="center">
+    <strong>A professional-grade, medallion-architecture Data Warehouse implementation using Microsoft SQL Server.</strong>
+  </p>
+</div>
 
 ---
-## 🏗️ Data Architecture
 
-The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
+## 🏗️ Data Architecture & Flow
+
+This repository houses a comprehensive end-to-end data warehousing solution designed around the **Medallion Architecture**. Raw data is ingested, cleansed, and modeled into optimized analytics-ready structures.
+
 ![Data Architecture](docs/data_architecture.png)
 
-1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
+### 📈 The Medallion Paradigm
+*   🟫 **Bronze Layer (Raw Staging):** Houses raw data ingested directly from source CRM & ERP systems. The schema mimics the source files as-is to preserve full history.
+*   🥈 **Silver Layer (Cleaned & Standardized):** *Under development.* Cleanses, standardizes data types, deduplicates, and normalizes tables to build a single source of truth.
+*   🥇 **Gold Layer (Analytical Modeling):** *Under development.* Houses business-ready datasets modeled into high-performance Star Schemas (Facts & Dimensions) optimized for BI tools.
 
 ---
-## 📖 Project Overview
-
-This project involves:
-
-1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
-2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
-3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
-
-🎯 This repository is an excellent resource for professionals and students looking to showcase expertise in:
-- SQL Development
-- Data Architect
-- Data Engineering  
-- ETL Pipeline Developer  
-- Data Modeling  
-- Data Analytics  
-
----
-
-## 🛠️ Important Links & Tools:
-
-Everything is for Free!
-- **[Datasets](datasets/):** Access to the project dataset (csv files).
-- **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Lightweight server for hosting your SQL database.
-- **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** GUI for managing and interacting with databases.
-- **[Git Repository](https://github.com/):** Set up a GitHub account and repository to manage, version, and collaborate on your code efficiently.
-- **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
-- **[Notion](https://www.notion.com/templates/sql-data-warehouse-project):** Get the Project Template from Notion
-- **[Notion Project Steps](https://thankful-pangolin-2ca.notion.site/SQL-Data-Warehouse-Project-16ed041640ef80489667cfe2f380b269?pvs=4):** Access to All Project Phases and Tasks.
-
----
-
-## 🚀 Project Requirements
-
-### Building the Data Warehouse (Data Engineering)
-
-#### Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
-
-#### Specifications
-- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-- **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
-- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
-
----
-
-### BI: Analytics & Reporting (Data Analysis)
-
-#### Objective
-Develop SQL-based analytics to deliver detailed insights into:
-- **Customer Behavior**
-- **Product Performance**
-- **Sales Trends**
-
-These insights empower stakeholders with key business metrics, enabling strategic decision-making.  
-
-For more details, refer to [docs/requirements.md](docs/requirements.md).
 
 ## 📂 Repository Structure
-```
+
+```directory
 data-warehouse-project/
-│
-├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
-│
-├── docs/                               # Project documentation and architecture details
-│   ├── etl.drawio                      # Draw.io file shows all different techniquies and methods of ETL
-│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
-│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
-│   ├── data_flow.drawio                # Draw.io file for the data flow diagram
-│   ├── data_models.drawio              # Draw.io file for data models (star schema)
-│   ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files
-│
-├── scripts/                            # SQL scripts for ETL and transformations
-│   ├── bronze/                         # Scripts for extracting and loading raw data
-│   ├── silver/                         # Scripts for cleaning and transforming data
-│   ├── gold/                           # Scripts for creating analytical models
-│
-├── tests/                              # Test scripts and quality files
-│
-├── README.md                           # Project overview and instructions
-├── LICENSE                             # License information for the repository
-├── .gitignore                          # Files and directories to be ignored by Git
-└── requirements.txt                    # Dependencies and requirements for the project
+├── datasets/             # Source data files (ERP & CRM raw exports)
+├── docs/                 # Architecture design, schemas & documentation
+│   └── data_architecture.png
+├── scripts/              # SQL pipelines and database initialization
+│   ├── init_database.sql # Database & Schema initialization script
+│   └── bronze/           # Bronze layer DDL and ingestion procedures
+└── tests/                # Data validation and testing scripts
 ```
+
 ---
 
+## 🚀 Quick Start Guide
 
+### Prerequisites
+*   **Database Engine:** SQL Server Express or Developer Edition.
+*   **Client tool:** SQL Server Management Studio (SSMS) or Azure Data Studio.
+
+### Step 1: Initialize Database & Schemas
+Connect to your SQL Server instance and execute the database setup script [init_database.sql](file:///c:/Data-Engineering/github_repos/sql-data-warehouse-project/scripts/init_database.sql). This will drop any existing `DataWarehouse` database and create the database along with `bronze`, `silver`, and `gold` schemas.
+
+### Step 2: Create Bronze Schema DDL
+Execute the Bronze DDL script [ddl_bronze.sql](file:///c:/Data-Engineering/github_repos/sql-data-warehouse-project/scripts/bronze/ddl_bronze.sql) to create the staging tables.
+
+### Step 3: Load Raw Data via ETL Stored Procedure
+Run the bulk-loading stored procedure [proc_load_bronze.sql](file:///c:/Data-Engineering/github_repos/sql-data-warehouse-project/scripts/bronze/proc_load_bronze.sql) to ingest CSV data into the bronze staging layer.
+> [!IMPORTANT]
+> Ensure the CSV files are placed in the path matching the `BULK INSERT` paths in the procedure (default path: `C:\sql\dwh_project\datasets\`).
+```sql
+EXEC bronze.load_bronze;
+```
+
+---
+
+## 📋 Data Sources & Catalog
+
+The warehouse integrates two distinct source systems to establish a unified view of customers, products, and sales:
+
+### 1. CRM (Customer Relationship Management)
+| Table | Description | Ingestion DDL |
+| :--- | :--- | :--- |
+| `crm_cust_info` | Customer profile details (names, gender, create date) | [ddl_bronze.sql (L16-L24)](file:///c:/Data-Engineering/github_repos/sql-data-warehouse-project/scripts/bronze/ddl_bronze.sql#L16-L24) |
+| `crm_prd_info` | Product master information (costs, lines, dates) | [ddl_bronze.sql (L31-L39)](file:///c:/Data-Engineering/github_repos/sql-data-warehouse-project/scripts/bronze/ddl_bronze.sql#L31-L39) |
+| `crm_sales_details` | Transactional sales details (quantity, price, orders) | [ddl_bronze.sql (L46-L56)](file:///c:/Data-Engineering/github_repos/sql-data-warehouse-project/scripts/bronze/ddl_bronze.sql#L46-L56) |
+
+### 2. ERP (Enterprise Resource Planning)
+| Table | Description | Ingestion DDL |
+| :--- | :--- | :--- |
+| `erp_loc_a101` | Customer location mapping (country codes) | [ddl_bronze.sql (L63-L66)](file:///c:/Data-Engineering/github_repos/sql-data-warehouse-project/scripts/bronze/ddl_bronze.sql#L63-L66) |
+| `erp_cust_az12` | Supplementary customer details (birth dates, gender) | [ddl_bronze.sql (L73-L77)](file:///c:/Data-Engineering/github_repos/sql-data-warehouse-project/scripts/bronze/ddl_bronze.sql#L73-L77) |
+| `erp_px_cat_g1v2` | Product category and maintenance hierarchy | [ddl_bronze.sql (L84-L89)](file:///c:/Data-Engineering/github_repos/sql-data-warehouse-project/scripts/bronze/ddl_bronze.sql#L84-L89) |
+
+---
+
+## 🛠️ Key Tools & Resources
+
+*   **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)** - High-performance database engine.
+*   **[SSMS](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)** - Graphical user interface for database management.
+*   **[Notion Project Board](https://thankful-pangolin-2ca.notion.site/SQL-Data-Warehouse-Project-16ed041640ef80489667cfe2f380b269)** - Detailed project phases and interactive checklists.
+*   **[Notion Template](https://www.notion.com/templates/sql-data-warehouse-project)** - Ready-to-use project tracker.
+*   **[Draw.io](https://www.draw.io/)** - Design interface for data models and diagrams.
+
+---
+
+## 🌟 About Me
+
+**Nisha Sorallikar**  
+*Aspiring Data Engineer*  
+Passionate about SQL, Python, Data Warehousing, ETL Pipelines, and Data Analytics.
+
+---
 
 ## 🛡️ License
 
 This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
-
-## 🌟 About Me
-
-Hi, I'm **Nisha Sorallikar**, a BCA graduate and aspiring Data Engineer passionate about SQL, Python, Data Warehousing, ETL Pipelines, and Data Analytics.
-
-This project showcases my hands-on experience in building a modern data warehouse and generating business insights using SQL Server.
-
