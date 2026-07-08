@@ -20,12 +20,10 @@ This repository houses a comprehensive end-to-end data warehousing solution desi
 
 ![Data Architecture](docs/data_architecture.png)
 
-*For detailed reference diagrams, workflows, and discovery checklists, see the [Data Warehouse Layers & Lifecycle](docs/data_layers.md) document.*
-
 ### 📈 The Medallion Paradigm
 *   🟫 **Bronze Layer (Raw Staging):** Houses raw data ingested directly from source CRM & ERP systems. The schema mimics the source files as-is to preserve full history.
 *   🥈 **Silver Layer (Cleaned & Standardized):** *Under development.* Cleanses, standardizes data types, deduplicates, and normalizes tables to build a single source of truth.
-*   🥇 **Gold Layer (Analytical Modeling):** *Under development.* Houses business-ready datasets modeled into high-performance Star Schemas (Facts & Dimensions) optimized for BI tools.
+*   🥇 **Gold Layer (Analytical Modeling):** *Under development.* Houses business-ready datasets modeled into high-performance Star Schemas (Facts & Dimensions) optimized for BI tools (see the [Sales Data Mart Star Schema Diagram](docs/data_model.png)).
 
 ---
 
@@ -38,12 +36,9 @@ data-warehouse-project/
 │   ├── data_architecture.png
 │   ├── data_flow.png
 │   ├── data_integration.png
-│   ├── data_layers.md    # Medallion layers definition & ingestion lifecycle
-│   ├── data_layers_comparison.png
-│   ├── data_layers_workflow.png
+│   ├── data_model.png    # Sales Data Mart Star Schema design
 │   ├── etl_methods.jpg
-│   ├── gold_layer_data_catalog.jpg
-│   └── source_system_interview.png
+│   └── gold_layer_data_catalog.jpg
 ├── scripts/              # SQL pipelines and database initialization
 │   ├── init_database.sql # Database & Schema initialization script
 │   └── bronze/           # Bronze layer DDL and ingestion procedures
