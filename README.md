@@ -20,7 +20,10 @@ This repository houses a comprehensive end-to-end data warehousing solution desi
 
 ![Data Architecture](docs/data_architecture.png)
 
-*For more details on the characteristics, implementation lifecycles, and ingestion checklist for each layer, see the [Data Warehouse Layers & Lifecycle](docs/data_layers.md) guide.*
+*For detailed reference diagrams, see the following resources:
+- [Medallion Layers Comparison](docs/data_layers_comparison.png)
+- [Layer Implementation Workflows](docs/data_layers_workflow.png)
+- [Source System Interview Checklist](docs/source_system_interview.png)*
 
 ### 📈 The Medallion Paradigm
 *   🟫 **Bronze Layer (Raw Staging):** Houses raw data ingested directly from source CRM & ERP systems. The schema mimics the source files as-is to preserve full history.
@@ -36,7 +39,13 @@ data-warehouse-project/
 ├── datasets/             # Source data files (ERP & CRM raw exports)
 ├── docs/                 # Architecture design, schemas & documentation
 │   ├── data_architecture.png
-│   └── data_layers.md    # Medallion layers definition & ingestion lifecycle
+│   ├── data_flow.png
+│   ├── data_integration.png
+│   ├── data_layers_comparison.png
+│   ├── data_layers_workflow.png
+│   ├── etl_methods.jpg
+│   ├── gold_layer_data_catalog.jpg
+│   └── source_system_interview.png
 ├── scripts/              # SQL pipelines and database initialization
 │   ├── init_database.sql # Database & Schema initialization script
 │   └── bronze/           # Bronze layer DDL and ingestion procedures
